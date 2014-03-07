@@ -161,7 +161,8 @@ Licensed under the MIT License ~ http://threedubmedia.googlecode.com/files/MIT-L
 
             panTimeout = setTimeout(function () {
                 plot.pan({ left: prevPageX - e.pageX,
-                           top: prevPageY - e.pageY });
+                           top: prevPageY - e.pageY,
+                           dragEnded: false });
                 prevPageX = e.pageX;
                 prevPageY = e.pageY;
                                                     
@@ -177,7 +178,8 @@ Licensed under the MIT License ~ http://threedubmedia.googlecode.com/files/MIT-L
                     
             plot.getPlaceholder().css('cursor', prevCursor);
             plot.pan({ left: prevPageX - e.pageX,
-                       top: prevPageY - e.pageY });
+                       top: prevPageY - e.pageY,
+                       dragEnded: true });
         }
         
         function bindEvents(plot, eventHolder) {
